@@ -31,6 +31,18 @@
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
 			include_once 'app/home/index.php';
 		break;		
+  	case (globalFunctionUri(2) == 'changePassword/edit'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'changePassword';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/changePassword/edit.php';
+	break;			
+   	case (globalFunctionUri(2) == 'changePassword/editSave'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'changePassword';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/changePassword/editSave.php';
+	break;			
 	break;			
 		default:
 		include_once 'app/auth/index.php';

@@ -19,7 +19,7 @@
            <a href="<?php echo $globalUrl ?>salesPreOrder/index" /> 
            <div class="card bg-primary text-white ui-hover-icon mb-4 bg-pattern-3">
                <div class="card-body text-center">
-                   <h2><?php echo $dataEmployeeMen['total'] ?> Orang</h2>
+                   <h2></h2>
                    <h6 class="mb-0">Jumlah Karyawan Pria</h6>
                    <i class="fa fa-male hov-icon"></i>
                </div>
@@ -30,7 +30,7 @@
            <a href="<?php echo $globalUrl ?>salesOrder/index" /> 
            <div class="card bg-success text-white ui-hover-icon mb-4 bg-pattern-3">
                <div class="card-body text-center">
-                   <h2><?php echo $dataEmployeeWomen['total'] ?> Orang</h2>
+                   <h2></h2>
                    <h6 class="mb-0">Jumlah Karyawan Wanita</h6>
                    <i class="fa fa-female hov-icon"></i>
                </div>
@@ -41,7 +41,7 @@
            <a href="<?php echo $globalUrl ?>salesPayment/index" /> 
            <div class="card bg-danger text-white ui-hover-icon mb-4 bg-pattern-3">
                <div class="card-body text-center">
-                   <h2><?php echo $dataAsset['total'] ?> Unit</h2>
+                   <h2></h2>
                    <h6 class="mb-0">Jumlah Barang Asset</h6>
                    <i class="fa fa-laptop hov-icon"></i>
                </div>
@@ -52,7 +52,7 @@
            <a href="<?php echo $globalUrl ?>salesReceivable/index" /> 
            <div class="card bg-warning text-white ui-hover-icon mb-4 bg-pattern-3">
                <div class="card-body text-center">
-                   <h2>Rp. <?php echo number_format($dataAssetNilai['total'],0,0,'.') ?></h2>
+                   <h2></h2>
                    <h6 class="mb-0">Jumlah Nilai Asset</h6>
                    <i class="fa fa-laptop hov-icon"></i>
                </div>

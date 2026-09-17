@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <!-- [ Logo ] End -->
-                    <h5 class="text-center text-muted font-weight-normal mb-4">Login Administrator</h5>
+                    <h5 class="text-center text-muted font-weight-normal mb-4">Login Affiliate</h5>
 
 					<?php if(isset($_GET['msg'])) : ?>
                         <div class="alert alert-dark-danger alert-dismissible fade show" style="height: 50px; padding: 5px; padding-top: 12px; text-align: center; border-radius: 10px">

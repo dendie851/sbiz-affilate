@@ -4,7 +4,7 @@
 <html lang="en" class="material-style layout-fixed">
 
 <head>
-    <title>HR - Mahira Global Nusantara</title>
+    <title>SBiZ Affiliate</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +60,7 @@
                     <span class="app-brand-logo demo">
                         <img src="<?php echo $config['app']['assets'] ?>img/logo-small.png" alt="logo" class="img-fluid">
                     </span>
-                    <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2" ><b>Administrator</b></a>
+                    <a href="#" class="app-brand-text demo sidenav-text font-weight-normal ml-2" ><b>Affiliate</b></a>
                     <a href="#" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
                         <i class="fa fa-list-ul"></i>
                     </a>
@@ -79,26 +79,7 @@
                             </a>
                         </li>    
 
-                        <?php if(in_array('1',$_SESSION['loginInfo']['moduleAccess'])): ?>
-                        <li class="sidenav-item <?php echo in_array($globalModulActive, array('company','managementUser')) ? 'open' : '' ?>">
-                            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                                <i class="sidenav-icon fa fa-cog"></i>&nbsp;
-                                <div style="<?php echo in_array($globalModulActive, array('company','managementUser')) > 0 ? 'color:white; font-weight: bold' : '' ?>">Pengaturan Umum </div>
-                            </a>
-                            <ul class="sidenav-menu">
-                                <li class="sidenav-item <?php echo $globalModulActive == 'company' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>company/edit" class="sidenav-link">
-                                        <div>Profil Perusahaan</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'managementUser' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>managementUser/index" class="sidenav-link">
-                                        <div>Manajemen User</div>
-                                    </a>
-                                </li>                        
-                            </ul>                        
-                        </li>  
-                        <?php endif; ?>  
+    
 
                         <li class="sidenav-item <?php echo substr_count($globalModulActive, 'employee') > 0 ? 'open' : '' ?>">
                             <a href="javascript:" class="sidenav-link sidenav-toggle">
