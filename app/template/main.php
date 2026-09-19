@@ -79,123 +79,35 @@
                             </a>
                         </li>    
 
-    
 
-                        <li class="sidenav-item <?php echo substr_count($globalModulActive, 'employee') > 0 ? 'open' : '' ?>">
-                            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                                <i class="sidenav-icon fa fa-user-friends"></i>&nbsp;
-                                <div style="<?php echo substr_count($globalModulActive, 'employee') > 0 ? 'color:white; font-weight: bold' : '' ?>">Karyawan </div>
+                        <li class="sidenav-item <?php echo $globalModulActive == 'profile' ? 'active' : '' ?>" id="grupMenuProfile">
+                            <a href="<?php echo $globalUrl ?>profile/profile" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-user"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'profile' ? 'color:white; font-weight: bold' : '' ?>">Profil</div>
                             </a>
-                             <ul class="sidenav-menu">
-                                <li class="sidenav-item <?php echo $globalModulActive == 'employeeDepartement' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>departement/index" class="sidenav-link">
-                                        <div>Departemen</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'employeePosition' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>employeePosition/index" class="sidenav-link">
-                                        <div>Posisi</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'employeeStatus' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>employeeStatus/index" class="sidenav-link">
-                                        <div>Status Pekerja</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'employee' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>employee/index" class="sidenav-link">
-                                        <div>Karyawan</div>
-                                    </a>
-                                </li>                        
-                            </ul>                        
-                        </li>    
-                        <li class="sidenav-item <?php echo $globalModulActive == 'absen' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>absen/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-clipboard-check"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'absen' ? 'color:white; font-weight: bold' : '' ?>">Daftar Absen</div>
+                        </li> 
+                        
+
+                         <li class="sidenav-item <?php echo $globalModulActive == 'product' ? 'active' : '' ?>" id="grupMenuProduct">
+                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'product' ? 'color:white; font-weight: bold' : '' ?>">Produk</div>
                             </a>
-                        </li>    
+                        </li>   
 
-
-                        <li class="sidenav-divider mb-1"></li>
-                        <li class="sidenav-header small font-weight-semibold" id="grupMenupayroll">Penggajian & Intensif</li>
-
-                        <li class="sidenav-item <?php echo in_array($globalModulActive, array('payrollMonthComponentIn','payrollMonthComponentOut')) ? 'open' : '' ?>">
-                            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                                <i class="sidenav-icon fa fa-weight"></i>&nbsp;
-                                <div style="<?php echo in_array($globalModulActive, array('payrollMonthComponentIn','payrollMonthComponentOut')) > 0 ? 'color:white; font-weight: bold' : '' ?>">Pengaturan Slip Gaji</div>
+                        <li class="sidenav-item <?php echo $globalModulActive == 'commision' ? 'active' : '' ?>" id="grupMenuPaymentCommision">
+                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'commision' ? 'color:white; font-weight: bold' : '' ?>">Pembayaran Komisi</div>
                             </a>
-                            <ul class="sidenav-menu">
-                                <li class="sidenav-item <?php echo $globalModulActive == 'payrollMonthComponentIn' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>payrollMonthComponentIn/index" class="sidenav-link">
-                                        <div>Komponen Pendapatan</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'payrollMonthComponentOut' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>payrollMonthComponentOut/index" class="sidenav-link">
-                                        <div>Komponen Pengurangan</div>
-                                    </a>
-                                </li>                        
-                            </ul>                        
-                        </li>    
+                        </li>                          
 
-
-                        <li class="sidenav-item <?php echo $globalModulActive == 'payrollMonthComponentList' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>payrollMonthComponentList/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-address-book"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'payrollMonthList' ? 'color:white; font-weight: bold; font-size: 13px' : '' ?>">Penerima Gaji & Insentif</div>
+                        <li class="sidenav-item <?php echo $globalModulActive == 'point' ? 'active' : '' ?>" id="grupMenuProfile">
+                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Penukaran Point</div>
                             </a>
-                        </li>    
-
-                        <li class="sidenav-item <?php echo $globalModulActive == 'payrollInsentifPayment' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>payrollInsentifPayment/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-money-bill"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'payrollInsentifPayment' ? 'color:white; font-weight: bold' : '' ?>">Pembayaran Insentif</div>
-                            </a>
-                        </li>    
-
-                        <li class="sidenav-item <?php echo $globalModulActive == 'payrollMonthPayment' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>payrollMonthPayment/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-money-bill-alt"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'payrollMonthPayment' ? 'color:white; font-weight: bold' : '' ?>">Pembayaran Gaji</div>
-                            </a>
-                        </li>    
-
-                        <li class="sidenav-item <?php echo in_array($globalModulActive, array('reportPayrollMonth','reportInsentif')) ? 'open' : '' ?>">
-                            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                                <i class="sidenav-icon fa fa-chart-bar"></i>&nbsp;
-                                <div style="<?php echo in_array($globalModulActive, array('reportPayrollMonth','reportInsentif')) > 0 ? 'color:white; font-weight: bold' : '' ?>">Laporan</div>
-                            </a>
-                            <ul class="sidenav-menu">
-                                <li class="sidenav-item <?php echo $globalModulActive == 'reportPayrollMonth' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>reportPayrollMonth/index" class="sidenav-link">
-                                        <div>Laporan Penggajian</div>
-                                    </a>
-                                </li>                        
-                                <li class="sidenav-item <?php echo $globalModulActive == 'reportInsentif' ? 'active' : '' ?>">
-                                    <a href="<?php echo $globalUrl ?>reportInsentif/index" class="sidenav-link">
-                                        <div>Laporan Insentif</div>
-                                    </a>
-                                </li>                        
-                            </ul>                        
-                        </li>    
-
-                        <li class="sidenav-divider mb-1"></li>
-                        <li class="sidenav-header small font-weight-semibold" id="grupMenuAsset">Pengelolaan Asset</li>
-
-                        <li class="sidenav-item <?php echo $globalModulActive == 'assetCategory' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>assetCategory/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-cubes"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'assetCategory' ? 'color:white; font-weight: bold' : '' ?>">Kategori Asset</div>
-                            </a>
-                        </li>    
-
-                        <li class="sidenav-item <?php echo $globalModulActive == 'asset' ? 'active' : '' ?>" >
-                            <a href="<?php echo $globalUrl ?>asset/index" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-cube"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'asset' ? 'color:white; font-weight: bold' : '' ?>">Asset & Peminjaman</div>
-                            </a>
-                        </li>                        
+                        </li>                           
                     </ul>
                 </div>    
             </div>

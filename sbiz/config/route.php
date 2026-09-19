@@ -42,7 +42,13 @@
 			$globalModulActive = 'changePassword';	
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';
 			include_once 'app/changePassword/editSave.php';
-	break;			
+	break;		
+  	case (globalFunctionUri(2) == 'profile/profile'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'profile';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/profile/profile.php';
+	break;				
 	break;			
 		default:
 		include_once 'app/auth/index.php';

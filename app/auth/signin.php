@@ -26,7 +26,6 @@
 		$arr = array('userId'=>$userId,'username'=>$data['id'],'affiliateId'=>$data['id']);
 		$_SESSION['loginInfo'] = $arr;
 		auth::signin($userId,$config['app']['name']);
-echo 'xxx';
 		include_once 'sbiz/lib/connection-close.php';
 		header('Location:'.$globalUrl.'home/dashboard');
 	} else {

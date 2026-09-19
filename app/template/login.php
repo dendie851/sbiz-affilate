@@ -3,7 +3,7 @@
 <html lang="en" class="material-style layout-fixed">
 
 <head>
-    <title>HR - Mahira Global Nusantara</title>
+    <title>SBiZ Affiliate</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
