@@ -95,10 +95,10 @@
                             </a>
                         </li>   
 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'commision' ? 'active' : '' ?>" id="grupMenuPaymentCommision">
-                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-user"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'commision' ? 'color:white; font-weight: bold' : '' ?>">Pembayaran Komisi</div>
+                        <li class="sidenav-item <?php echo $globalModulActive == 'commision' ? 'active' : '' ?>" id="grupMenuCommision">
+                            <a href="<?php echo $globalUrl ?>commission/index" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-coins"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'commision' ? 'color:white; font-weight: bold' : '' ?>">Komisi</div>
                             </a>
                         </li>                          
 
