@@ -22,6 +22,7 @@
 	$affiliateSetting = isset($dataAffiliateSetting['value']) ? $dataAffiliateSetting['value'] : 'http://example.com';
 
 	$query = "select afs.id, afs.stuff_id, afs.id as affiliate_stuff_id, afs.stuff_id, afs.link_product_brosur,  afs.stuff_id, afs.point, afs.price,
+	            afs.fee_affiliate_nominal, afs.fee_affiliate_percent,	
 	            s.sku, s.name, s.stock, a.username
 			  from affiliate_stuff as afs
 			  inner join stuff as s
