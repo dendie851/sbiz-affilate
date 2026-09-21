@@ -48,7 +48,13 @@
 			$globalModulActive = 'profile';	
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';
 			include_once 'app/profile/profile.php';
-	break;				
+	break;		
+  	case (globalFunctionUri(2) == 'product/index'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'product';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/product/index.php';
+	break;			
 	break;			
 		default:
 		include_once 'app/auth/index.php';

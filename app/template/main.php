@@ -89,15 +89,15 @@
                         
 
                          <li class="sidenav-item <?php echo $globalModulActive == 'product' ? 'active' : '' ?>" id="grupMenuProduct">
-                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                            <a href="<?php echo $globalUrl ?>product/index" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-cubes"></i>&nbsp;
                                 <div style="<?php echo $globalModulActive == 'product' ? 'color:white; font-weight: bold' : '' ?>">Produk</div>
                             </a>
                         </li>   
 
                         <li class="sidenav-item <?php echo $globalModulActive == 'commision' ? 'active' : '' ?>" id="grupMenuPaymentCommision">
                             <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                                <i class="sidenav-icon fa fa-user"></i>&nbsp;
                                 <div style="<?php echo $globalModulActive == 'commision' ? 'color:white; font-weight: bold' : '' ?>">Pembayaran Komisi</div>
                             </a>
                         </li>                          
@@ -239,9 +239,9 @@
             document.getElementById(viewScroolGroupMenu).scrollIntoView(); 
         </script>
     <?php endif; ?>    
-     
+ 
     <script type="text/javascript">
-        $('.listMenu').perfectScrollbar();
+        $('.listMenu').perfectScrollbar();     
     </script>    
     <?php echo isset($embedCssJS) ? $embedCssJS : '' ?>
 </body>
