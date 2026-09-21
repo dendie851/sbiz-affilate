@@ -54,7 +54,37 @@
 			$globalModulActive = 'product';	
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';
 			include_once 'app/product/index.php';
-	break;			
+	break;		
+  	case (globalFunctionUri(2) == 'commission/index'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'commision';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/commission/index.php';
+	break;		
+  	case (globalFunctionUri(2) == 'commission/detail'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'commision';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/commission/detail.php';
+	break;		
+  	case (globalFunctionUri(2) == 'commission/add'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'commision';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/commission/add.php';
+	break;		
+  	case (globalFunctionUri(2) == 'commission/addSave'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'commision';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/commission/addSave.php';
+	break;		
+  	case (globalFunctionUri(2) == 'commission/print'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'commision';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/commission/print.php';
+	break;	
 	break;			
 		default:
 		include_once 'app/auth/index.php';

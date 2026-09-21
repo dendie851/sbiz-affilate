@@ -22,3 +22,8 @@ Setiap kali pengguna meminta untuk membuat fitur, modul, atau komponen baru, kam
 ## 5. Prosedur Pengerjaan
 - Jangan langsung membuat seluruh file beserta logikanya dalam satu kali *generate*.
 - Buat file kerangka (skeleton/boilerplate) terlebih dahulu sesuai dengan pola file yang ada di `app/assetCategory`, pastikan strukturnya disetujui, lalu lanjutkan mengisi logika bisnisnya.
+
+# EXECUTION & TOKEN SAVING RULES
+- DO NOT run any unit tests, automated tests, or terminal execution commands (like phpunit, composer test, npm run test) after writing code unless explicitly asked.
+- After creating or modifying files, STOP immediately and wait for user review. 
+- Do not attempt to self-correct by running the app in the terminal. The user will manually review the code to save API tokens.

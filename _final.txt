@@ -1,0 +1,43 @@
+LOGIN affiliate (pemilik data): OK
+commission/index           HTTP 200 | bytes=20123 | PHP-err=CLEAN
+commission/detail?id=19    HTTP 200 | bytes=22377 | PHP-err=CLEAN
+commission/detail?id=20    HTTP 200 | bytes=22377 | PHP-err=CLEAN
+commission/add             HTTP 200 | bytes=19088 | PHP-err=CLEAN
+  index  teks "Komisi" : ADA
+  index  teks "Tambah Pencairan" : ADA
+  index  teks "CAIR" : ADA
+  index  teks "NO PEMBAYARAN" : ADA
+  index  teks "TANGGAL TRANSFER" : ADA
+  index  teks "TOTAL PENCAIRAN" : ADA
+  index  teks "STATUS" : ADA
+  detail teks "Detail Komisi" : ADA
+  detail teks "Informasi Pencairan" : ADA
+  detail teks "No Pembayaran" : ADA
+  detail teks "Tanggal Transfer" : ADA
+  detail teks "Bank" : ADA
+  detail teks "Keterangan" : ADA
+  detail teks "Total Pencairan" : ADA
+  detail teks "TOTAL" : ADA
+  detail teks "Kembali" : ADA
+  add    teks "Tambah Pencairan Komisi" : ADA
+  add    teks "Rekening Pencairan" : ADA
+  add    teks "No Rekening" : ADA
+  add    teks "Atas Nama" : ADA
+  add    teks "PILIH" : TIDAK <<<<
+  add    teks "NILAI ORDER" : TIDAK <<<<
+  add    teks "TOTAL PENCAIRAN" : TIDAK <<<<
+  add    teks "Batal" : ADA
+  add    teks "Simpan" : ADA
+--- dengan 1 SO yang bisa dicairkan (id=17) ---
+  add    teks "PILIH" : ADA
+  add    teks "NO SALES ORDER" : ADA
+  add    teks "NAMA PEMBELI" : ADA
+  add    teks "TANGGAL ORDER" : ADA
+  add    teks "NILAI ORDER" : ADA
+  add    teks "KOMISI" : ADA
+  add    teks "TOTAL PENCAIRAN" : ADA
+  add    teks "SO-FINAL" : ADA
+  add    teks "1.500" : ADA
+  checkbox chkOrder : ADA
+  data-fee          : ADA
+CLEANUP: sales_order=12 (semula 12)
