@@ -6,11 +6,11 @@
         <div class="container-fluid flex-grow-1 container-p-y">
             <div class="row">
                   <div class="col-md-8">                                                      
-                        <h4 class="font-weight-bold py-3 mb-0">Komisi</h4>   
+                        <h4 class="font-weight-bold py-3 mb-0">Penukaran Poin</h4>   
                         <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo $globalUrl ?>home/dashboard"><i class="fa fa-home"></i></a></li> 
-                                <li class="breadcrumb-item">Komisi</li>
+                                <li class="breadcrumb-item">Penukaran Komisi</li>
                             </ol>
                         </div>                               
                   </div>
@@ -28,12 +28,13 @@
                         <thead>
                             <tr>
                                 <th width="5%" style="text-align: center"><b>NO</b></th>
-                                <th style="text-align: center"><b>NO PEMBAYARAN</b></th>
-                                <th style="text-align: center"><b>TANGGAL TRANSFER</b></th>
-                                <th style="text-align: center"><b>BANK PENGIRIM</b></th>
-                                <th style="text-align: center"><b>BANK TUJUAN</b></th>
-                                <th style="text-align: center"><b>TOTAL PENCAIRAN</b></th>
-                                <th width="10%" style="text-align: center"></th>
+                                <th style="text-align: center"><b>NO PENUKARAN POIN</b></th>
+                                <th style="text-align: center"><b>REWARD NAME</b></th>
+                                <th style="text-align: center"><b>REWARD POINT </b></th>
+                                <th style="text-align: center"><b>POINT DI TUKAR</b></th>
+                                <th style="text-align: center"><b>KETERANGAN</b></th>
+                                <th style="text-align: center"><b>STATUS KLAIM</b></th>
+                                <th style="text-align: center"><b>RIWAYAT</b></th>
                             </tr>                                               
                         </thead>
                         <tbody>
@@ -41,14 +42,43 @@
                             <?php while($val = $data->fetch_array()): ?>
                                 <tr style="cursor: pointer;">
                                     <td align="center"><?php echo $i ?></td>
-                                    <td><?php echo $val['no_payment'] ?></td>
-                                    <td align="center"><?php echo $val['date_transfer'] ?></td>
-                                    <td><?php echo $val['from_bank'] ?></td>
-                                    <td><?php echo $val['bank_name'] ?></td>
-                                    <td align="right"><?php echo number_format($val['total_withdraw'], 0, ',', '.') ?></td>
-                                    <td align="center" style="width: 50px; vertical-align: middle;" > 
-									    <i  class="fa fa-eye" style="font-size: 17px" onclick="window.location='<?php echo $globalUrl ?>commission/detail?id=<?php echo $val['id'] ?>'"></i>		                            
-									</td>                                    
+                                    <td><?php echo $val['no_point_claim'] ?></td>
+                                    <td><?php echo $val['reward_name'] ?></td>
+                                    <td><?php echo $val['points_price_reward'] ?></td>
+                                    <td><?php echo $val['points_spent'] ?></td>
+                                    <td><?php echo $val['notes'] ?></td>
+                                    <td align="center">
+                                        <b>
+                                        <?php if($val['status_claim'] == '0'):  ?>
+                                            PENGAJUAN
+                                        <?php endif; ?>
+
+                                        <?php if($val['status_claim'] == '1'):  ?>
+                                            DI SETUJUI
+                                        <?php endif; ?>
+
+                                        <?php if($val['status_claim'] == '2'):  ?>
+                                            PROSES PENYERAHAN
+                                        <?php endif; ?>
+
+                                        <?php if($val['status_claim'] == '3'):  ?>
+                                            SELESAI
+                                        <?php endif; ?>
+
+                                        <?php if($val['status_claim'] == '4'):  ?>
+                                            DI TOLAK
+                                        <?php endif; ?>
+                                        </b>
+                                    </td>    
+                                    <td>    
+                                        <div style="font-size:8px">
+                                            Tgl Pengajuan: <?php echo $val['date_request_frm'] ?><br/>
+                                            Tgl Disetujui: <?php echo $val['date_approve_frm'] ?><br/>
+                                            Tgl Proses Penyerahaan : <?php echo $val['date_process_frm'] ?><br/>
+                                            Tgl Selesai : <?php echo $val['date_complete_frm'] ?><br/>
+                                            Tgl Ditolak :<?php echo $val['date_reject'] ?>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php $i++ ?>    
                             <?php endwhile; ?>                          

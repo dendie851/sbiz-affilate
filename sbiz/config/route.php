@@ -34,62 +34,68 @@
   	case (globalFunctionUri(2) == 'changePassword/edit'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'changePassword';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuChangePassword';
 			include_once 'app/changePassword/edit.php';
 	break;			
    	case (globalFunctionUri(2) == 'changePassword/editSave'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'changePassword';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuChangePassword';
 			include_once 'app/changePassword/editSave.php';
 	break;		
   	case (globalFunctionUri(2) == 'profile/profile'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'profile';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuProfile';
 			include_once 'app/profile/profile.php';
 	break;		
   	case (globalFunctionUri(2) == 'product/index'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'product';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuProduct';
 			include_once 'app/product/index.php';
 	break;		
   	case (globalFunctionUri(2) == 'commission/index'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'commision';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuCommision';
 			include_once 'app/commission/index.php';
 	break;		
   	case (globalFunctionUri(2) == 'commission/detail'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'commision';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuCommision';
 			include_once 'app/commission/detail.php';
 	break;		
   	case (globalFunctionUri(2) == 'commission/add'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'commision';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuCommision';
 			include_once 'app/commission/add.php';
 	break;		
   	case (globalFunctionUri(2) == 'commission/addSave'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'commision';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuCommision';
 			include_once 'app/commission/addSave.php';
 	break;		
   	case (globalFunctionUri(2) == 'commission/print'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'commision';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuCommision';
 			include_once 'app/commission/print.php';
 	break;	
 	case (globalFunctionUri(2) == 'salesOrder/index'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'salesOrder';	
-			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			$globalViewScroolGroupMenu = 'grupMenuSalesOrder';
 			include_once 'app/salesOrder/index.php';
+	break;	
+	case (globalFunctionUri(2) == 'point/index'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPont';
+			include_once 'app/point/index.php';
 	break;	
 	break;			
 		default:

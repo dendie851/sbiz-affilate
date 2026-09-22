@@ -102,9 +102,9 @@
                             </a>
                         </li>                          
 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'point' ? 'active' : '' ?>" id="grupMenuProfile">
-                            <a href="<?php echo $globalUrl ?>home/profile" class="sidenav-link">
-                                <i class="sidenav-icon fa fa-home"></i>&nbsp;
+                        <li class="sidenav-item <?php echo $globalModulActive == 'point' ? 'active' : '' ?>" id="grupMenuPoint">
+                            <a href="<?php echo $globalUrl ?>point/index" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-circle"></i>&nbsp;
                                 <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Penukaran Point</div>
                             </a>
                         </li> 
