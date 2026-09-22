@@ -85,6 +85,12 @@
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';
 			include_once 'app/commission/print.php';
 	break;	
+	case (globalFunctionUri(2) == 'salesOrder/index'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'salesOrder';	
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';
+			include_once 'app/salesOrder/index.php';
+	break;	
 	break;			
 		default:
 		include_once 'app/auth/index.php';

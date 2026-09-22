@@ -107,7 +107,14 @@
                                 <i class="sidenav-icon fa fa-home"></i>&nbsp;
                                 <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Penukaran Point</div>
                             </a>
-                        </li>                           
+                        </li> 
+                        
+                        <li class="sidenav-item <?php echo $globalModulActive == 'salesOrder' ? 'active' : '' ?>" id="grupMenuSalesOrder">
+                            <a href="<?php echo $globalUrl ?>salesOrder/index" class="sidenav-link">
+                                <i class="sidenav-icon fa fa-tags"></i>&nbsp;
+                                <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Riwayat Penjualan</div>
+                            </a>
+                        </li>                         
                     </ul>
                 </div>    
             </div>
