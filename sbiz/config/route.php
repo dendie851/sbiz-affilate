@@ -49,6 +49,18 @@
 			$globalViewScroolGroupMenu = 'grupMenuProfile';
 			include_once 'app/profile/profile.php';
 	break;		
+  	case (globalFunctionUri(2) == 'profile/editBank'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'profile';	
+			$globalViewScroolGroupMenu = 'grupMenuProfile';
+			include_once 'app/profile/editBank.php';
+	break;		
+  	case (globalFunctionUri(2) == 'profile/editBankSave'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'profile';	
+			$globalViewScroolGroupMenu = 'grupMenuProfile';
+			include_once 'app/profile/editBankSave.php';
+	break;		
   	case (globalFunctionUri(2) == 'product/index'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'product';	

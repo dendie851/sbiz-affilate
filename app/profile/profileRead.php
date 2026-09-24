@@ -14,7 +14,15 @@
 	$tmp = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
 	$data = $tmp->fetch_array();
 
+	$queryBank = "select id, affiliate_id, bank_name, account_name, account_number
+			  	  from affiliate_bank
+			  	  where affiliate_id = '{$userId}'
+			  	    and is_delete = '0'";
 
+	$tmpBank = $globalConDBMySQL->query($queryBank) or die (mysqli_error($globalConDBMySQL));
+	$dataBank = $tmpBank->fetch_array();
+
+	$isBankExist = mysqli_num_rows($tmpBank) < 1 ? '0' : '1';
 
 	include_once 'sbiz/lib/connection-close.php';
 ?>
