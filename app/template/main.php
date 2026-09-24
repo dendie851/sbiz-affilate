@@ -102,10 +102,21 @@
                             </a>
                         </li>                          
 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'point' ? 'active' : '' ?>" id="grupMenuPoint">
-                            <a href="<?php echo $globalUrl ?>point/index" class="sidenav-link">
+                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>" id="grupMenuPoint">
+                            <a href="#" class="sidenav-link">
                                 <i class="sidenav-icon fa fa-circle"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Penukaran Point</div>
+                                <div style="<?php echo $globalModulActive == 'spoint' ? 'color:white; font-weight: bold' : '' ?>">Point</div>
+                            </a>
+                        </li> 
+
+                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>">
+                            <a href="<?php echo $globalUrl ?>point/index" class="sidenav-link" style="padding-left: 55px">
+                                <div style="<?php echo globalFunctionUri(2) == 'point/index' ? 'color:white; font-weight: bold' : '' ?>">Daftar Penukaran</div>
+                            </a>
+                        </li> 
+                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>">
+                            <a href="<?php echo $globalUrl ?>point/claim" class="sidenav-link" style="padding-left: 55px">
+                                <div style="<?php echo globalFunctionUri(2) == 'point/claim' ? 'color:white; font-weight: bold' : '' ?>">Klaim Point</div>
                             </a>
                         </li> 
                         

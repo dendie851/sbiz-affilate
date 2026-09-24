@@ -6,23 +6,6 @@
 
 	$loginInfo = $_SESSION['loginInfo'];
 	$userId = $loginInfo['userId'];
-	
-	$query = "select a.id, a.affiliate_id, a.reward_id, a.no_point_claim, a.points_spent, a.points_price_reward,
-				a.status_claim, a.notes, a.date_request, a.date_approve, a.date_process, a.date_complete, a.date_reject,
-				a.is_delete, r.title as reward_name,
-				date_format(date_request,'%d-%m-%Y') as date_request_frm,
-				date_format(date_approve,'%d/%m/%Y') as date_approve_frm,
-				date_format(date_process,'%d/%m/%Y') as date_process_frm,
-				date_format(date_complete,'%d/%m/%Y') as date_complete_frm,
-				date_format(date_reject,'%d/%m/%Y') as date_reject
-			  from affiliate_point_claim as a
-			  left join reward as r
-			   on a.reward_id = r.id
-			  where a.affiliate_id = '{$userId}'
-			    and a.is_delete = '0'
-			  order by a.date_request desc";
-
-	$data = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
 
 	// Total poin yang diperoleh dari penjualan (kolom affiliate_point pada sales_order_detail)
 	$query = "select count(distinct so.id) as jml_transaksi, sum(sod.affiliate_point) as total_point
@@ -32,7 +15,7 @@
 			  where so.affiliate_id = '{$userId}'
 			    and so.is_affiliate = '1'
 			    and so.is_delete = '0'
-			    and so.status_order = '3'";
+			    and so.status_payment = '1'";
 
 	$tmp = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
 	$dataPoint = $tmp->fetch_array();
@@ -68,6 +51,49 @@
 						'total_pending' => $totalPending,
 						'sisa_point' => $totalPoint - $totalSpent
 					);
+
+	// Pilihan reward yang bisa ditukarkan
+	$query = "select id, title, points_required, daily_stock
+			  from reward
+			  where is_delete = '0'
+			    and is_active = '1'
+			  order by points_required";
+
+	$cmbReward = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
+
+	// Riwayat poin: poin masuk dari penjualan (affiliate_point) dan poin keluar dari penukaran
+	$query = "select 'masuk' as tipe, sod.id, so.no_order as ref, so.date_order as date_row,
+				date_format(so.date_order,'%d/%m/%Y') as date_frm,
+				concat('Poin dari penjualan ', so.no_order, ' - ', sod.name) as ket,
+				sod.affiliate_point as point_in, 0 as point_out,
+				'' as notes, '' as status, so.id as sort_order
+			  from sales_order as so
+			  inner join sales_order_detail as sod
+			   on sod.sales_order_id = so.id
+			  where so.affiliate_id = '{$userId}'
+			    and so.is_affiliate = '1'
+			    and so.is_delete = '0'
+			    and so.status_payment = '1'
+			  union all
+			  select 'keluar' as tipe, apc.id, apc.no_point_claim as ref, apc.date_request as date_row,
+				date_format(apc.date_request,'%d/%m/%Y') as date_frm,
+				(select concat('Penukaran poin ', rw.title) from reward as rw where rw.id = apc.reward_id) as ket,
+				0 as point_in, apc.points_spent as point_out,
+				apc.notes,
+				case apc.status_claim
+					when '0' then 'PENGAJUAN'
+					when '1' then 'DI SETUJUI'
+					when '2' then 'PROSES PENYERAHAN'
+					when '3' then 'SELESAI'
+					when '4' then 'DI TOLAK'
+				end as status,
+				apc.id as sort_order
+			  from affiliate_point_claim as apc
+			  where apc.affiliate_id = '{$userId}'
+			    and apc.is_delete = '0'
+			  order by date_row desc, sort_order desc, id";
+
+	$riwayat = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
 
 	include_once 'sbiz/lib/connection-close.php';
 ?>

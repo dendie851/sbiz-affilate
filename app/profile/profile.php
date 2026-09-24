@@ -17,7 +17,9 @@
                         </div>                               
                   </div>
                   <div class="col-md-4" style="text-align:right; padding-top:30px; padding-right:20px; padding-bottom: 10px">
-                        <button type="button" class="btn btn-primary" onclick="window.location='<?php echo $globalUrl ?>employee/index'">Kembali</button>                    
+                        <!--
+                        <button type="button" class="btn btn-primary" onclick="window.location='<?php echo $globalUrl ?>employee/index'">Kembali</button>  
+                        -->                  
                   </div>    
             </div>      
 

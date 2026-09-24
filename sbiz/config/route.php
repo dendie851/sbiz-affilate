@@ -94,9 +94,39 @@
 	case (globalFunctionUri(2) == 'point/index'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'spoint';	
-			$globalViewScroolGroupMenu = 'grupMenuPont';
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
 			include_once 'app/point/index.php';
 	break;	
+	case (globalFunctionUri(2) == 'point/claim'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
+			include_once 'app/point/claim.php';
+	break;	
+	case (globalFunctionUri(2) == 'point/claimSave'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
+			include_once 'app/point/claimSave.php';
+	break;	
+	case (globalFunctionUri(2) == 'point/cancel'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
+			include_once 'app/point/cancel.php';
+	break;
+	case (globalFunctionUri(2) == 'point/reward'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
+			include_once 'app/point/reward.php';
+	break;	
+	case (globalFunctionUri(2) == 'point/rewardSave'):
+			language::set($config['app']['language']);
+			$globalModulActive = 'spoint';	
+			$globalViewScroolGroupMenu = 'grupMenuPoint';
+			include_once 'app/point/rewardSave.php';
+	break;			
 	break;			
 		default:
 		include_once 'app/auth/index.php';

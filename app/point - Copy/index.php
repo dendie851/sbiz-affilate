@@ -26,12 +26,6 @@
                         Data berhasil disimpan
                     </div>   
                 <?php endif; ?>                                  
-                <?php if($_GET['msg'] == 'cancelSuccess'): ?>   
-                    <div class="alert alert-dark-success alert-dismissible fade show">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        Data berhasil dibatalkan
-                    </div>   
-                <?php endif; ?>                                  
             <?php endif; ?>
 
             <div class="row">
@@ -90,7 +84,6 @@
                                 <th style="text-align: center"><b>KETERANGAN</b></th>
                                 <th style="text-align: center"><b>STATUS KLAIM</b></th>
                                 <th style="text-align: center"><b>RIWAYAT</b></th>
-                                <th width="5%" style="text-align: center"></th>
                             </tr>                                               
                         </thead>
                         <tbody>
@@ -135,11 +128,6 @@
                                             Tgl Ditolak :<?php echo $val['date_reject'] ?>
                                         </div>
                                     </td>
-                                    <td align="center" style="width: 50px; vertical-align: middle;" > 
-                                        <?php if($val['status_claim'] == '0'):  ?>
-                                            <i class="fa fa-times" style="font-size: 17px" title="Batal" onclick="cancelConfirm(<?php echo $val['id'] ?>)"></i>
-                                        <?php endif; ?>
-                                    </td>
                                 </tr>
                             <?php $i++ ?>    
                             <?php endwhile; ?>                          
@@ -166,19 +154,6 @@
         }               
         );
     });  
-
-    function cancelConfirm(p) {
-      bootbox.confirm({
-        message: 'Anda yakin akan membatalkan penukaran poin ini ?',
-        className: 'bootbox-xs',
-
-        callback: function(result) {
-            if(result) {
-                window.location='<?php echo $globalUrl ?>point/cancel?id='+p;
-            }    
-        },
-      });
-    }    
 </script>
 <?php $embedCssJS = ob_get_contents(); ?>
 <?php ob_end_clean(); ?>
