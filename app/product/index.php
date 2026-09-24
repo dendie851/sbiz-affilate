@@ -72,7 +72,9 @@
                             <tr>
                                 <th width="5%" style="text-align: center"><b>NO</b></th>
                                 <th width="20%" style="text-align: center"><b>PRODUK</b></th>
+                                <!--
                                 <th width="10%" style="text-align: center"><b>KOMISI PERSEN</b></th>
+                                -->
                                 <th width="10%" style="text-align: center"><b>KOMISI NOMINAL</b></th>
                                 <th width="10%" style="text-align: center"><b>POIN</b></th>
                                 <th width="25%" style="text-align: center"><b>LINK REFERRAL</b></th>  
@@ -89,9 +91,11 @@
                                     <td>
                                         <?php echo $val['name'] ?>                 
                                     </td> 
+                                    <!--
                                     <td align="center">            
                                         <?php echo $val['fee_affiliate_percent'] ?>
-                                    </td>                                               
+                                    </td>   
+                                    -->                                            
                                     <td align="center">            
                                         <?php echo number_format($val['fee_affiliate_nominal']) ?>
                                     </td>

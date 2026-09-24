@@ -106,20 +106,16 @@
             <table class="table table-bordered table-striped mb-0">
                 <thead class="thead-dark text-center">
                     <tr>
-                        <th width="4%" class="align-middle">NO</th>
-                        <th width="28%" class="align-middle">NAMA BARANG</th>
-                        <th width="7%" class="align-middle">QTY</th>
-                        <th width="18%" class="align-middle">HARGA JUAL</th>
-                        <th width="18%" class="align-middle">JUMLAH</th>
-                        <th width="15%" class="align-middle">KOMISI</th>
-                        <th width="10%" class="align-middle">POIN</th>
+                        <th width="5%" class="align-middle">NO</th>
+                        <th width="35%" class="align-middle">NAMA BARANG</th>
+                        <th width="10%" class="align-middle">QTY</th>
+                        <th width="25%" class="align-middle">HARGA JUAL</th>
+                        <th width="25%" class="align-middle">JUMLAH</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $i = 1; ?>
                     <?php $total = 0; ?>
-                    <?php $totalAffiliateFee = 0; ?>
-                    <?php $totalAffiliatePoint = 0; ?>
                     <?php while($val = mysqli_fetch_array($dataDetail)): ?>
                         <tr>
                             <td class="text-center align-middle"><?php echo $i ?></td>
@@ -150,34 +146,11 @@
                             <td class="text-center align-middle"><?php echo $val['amount'] ?></td>
                             <td class="text-right align-middle">Rp. <?php echo number_format($val['price'], 0, ',', '.') ?></td>   
                             <td class="text-right align-middle font-weight-bold">Rp. <?php echo number_format($val['price'] * $val['amount'], 0, ',', '.') ?></td>                            
-                            <td class="text-right align-middle">
-                                <?php if(isset($val['affiliate_fee_nominal']) && $val['affiliate_fee_nominal'] > 0): ?>
-                                    Rp. <?php echo number_format($val['affiliate_fee_nominal'], 0, ',', '.') ?>
-                                <?php else: ?>
-                                    <span class="text-muted">-</span>
-                                <?php endif; ?>
-                            </td>
-                            <td class="text-center align-middle">
-                                <?php if(isset($val['affiliate_point']) && $val['affiliate_point'] > 0): ?>
-                                    <?php echo number_format($val['affiliate_point'], 0, ',', '.') ?>
-                                <?php else: ?>
-                                    <span class="text-muted">-</span>
-                                <?php endif; ?>
-                            </td>
                         </tr>   
                         <?php $total = $total + ($val['price'] * $val['amount']) ?>
-                        <?php $totalAffiliateFee = $totalAffiliateFee + (isset($val['affiliate_fee_nominal']) ? $val['affiliate_fee_nominal'] : 0) ?>
-                        <?php $totalAffiliatePoint = $totalAffiliatePoint + (isset($val['affiliate_point']) ? $val['affiliate_point'] : 0) ?>
                         <?php $i++; ?>
                     <?php endwhile; ?>
                 </tbody>
-                <tfoot class="bg-light">
-                    <tr>
-                        <th colspan="5" class="text-right align-middle">TOTAL KOMISI AFILIATOR</th>
-                        <th class="text-right align-middle text-primary">Rp. <?php echo number_format($totalAffiliateFee, 0, ',', '.') ?></th>
-                        <th class="text-center align-middle text-primary"><?php echo number_format($totalAffiliatePoint, 0, ',', '.') ?></th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
         
@@ -214,14 +187,6 @@
                         <tr>
                             <td class="text-right">Biaya Kirim Akhir</td>
                             <td class="text-right">Rp. <?php echo number_format($dataHeader['shipping_cost'], 0, ',', '.') ?></td>
-                        </tr>                                               
-                        <tr class="border-top">
-                            <td class="text-right">Total Komisi Afiliator</td>
-                            <td class="text-right text-primary">Rp. <?php echo number_format($totalAffiliateFee, 0, ',', '.') ?></td>
-                        </tr>                                               
-                        <tr>
-                            <td class="text-right">Total Poin Afiliator</td>
-                            <td class="text-right text-primary"><?php echo number_format($totalAffiliatePoint, 0, ',', '.') ?> Poin</td>
                         </tr>                                               
                         <tr class="border-top bg-light">
                             <td class="font-weight-bold text-right" style="font-size: 1.1rem;">GRAND TOTAL</td>

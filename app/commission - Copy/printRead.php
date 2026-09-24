@@ -35,7 +35,6 @@
 
 	$query = "select id, stuff_id, price_basic, price, amount, 
 		discount_persen, discount_money, name, nickname, is_bundling,
-		affiliate_fee_nominal, affiliate_fee_percent, affiliate_point,
 		(select st.sku from stuff as st where st.id = sales_order_detail.stuff_id) as sku
 	from sales_order_detail
 	where sales_order_id = '$id'
