@@ -6,11 +6,12 @@
         <div class="container-fluid flex-grow-1 container-p-y">
             <div class="row">
                   <div class="col-md-8">                                                      
-                        <h4 class="font-weight-bold py-3 mb-0">Penukaran Poin</h4>   
+                        <h4 class="font-weight-bold py-3 mb-0">Point</h4>   
                         <div class="text-muted small mt-0 mb-4 d-block breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo $globalUrl ?>home/dashboard"><i class="fa fa-home"></i></a></li> 
-                                <li class="breadcrumb-item">Penukaran Komisi</li>
+                                <li class="breadcrumb-item">Point</li>
+                                <li class="breadcrumb-item">Daftar Penukaran</li>
                             </ol>
                         </div>                               
                   </div>

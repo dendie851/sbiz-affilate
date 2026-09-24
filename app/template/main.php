@@ -102,28 +102,30 @@
                             </a>
                         </li>                          
 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>" id="grupMenuPoint">
-                            <a href="#" class="sidenav-link">
+                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active open' : '' ?>" id="grupMenuPoint">
+                            <a href="#" class="sidenav-link sidenav-toggle">
                                 <i class="sidenav-icon fa fa-circle"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'spoint' ? 'color:white; font-weight: bold' : '' ?>">Point</div>
+                                <div>Point</div>
                             </a>
-                        </li> 
 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>point/index" class="sidenav-link" style="padding-left: 55px">
-                                <div style="<?php echo globalFunctionUri(2) == 'point/index' ? 'color:white; font-weight: bold' : '' ?>">Daftar Penukaran</div>
-                            </a>
-                        </li> 
-                        <li class="sidenav-item <?php echo $globalModulActive == 'spoint' ? 'active' : '' ?>">
-                            <a href="<?php echo $globalUrl ?>point/claim" class="sidenav-link" style="padding-left: 55px">
-                                <div style="<?php echo globalFunctionUri(2) == 'point/claim' ? 'color:white; font-weight: bold' : '' ?>">Klaim Point</div>
-                            </a>
+                            <ul class="sidenav-menu">
+                                <li class="sidenav-item <?php echo strpos(globalFunctionUri(2), 'point/claim') !== false ? 'active' : '' ?>">
+                                    <a href="<?php echo $globalUrl ?>point/claim" class="sidenav-link">
+                                        <div style="<?php echo strpos(globalFunctionUri(2), 'point/claim') !== false ? 'color:white; font-weight: bold' : '' ?>">Klaim Point</div>
+                                    </a>
+                                </li>
+                                <li class="sidenav-item <?php echo strpos(globalFunctionUri(2), 'point/index') !== false ? 'active' : '' ?>">
+                                    <a href="<?php echo $globalUrl ?>point/index" class="sidenav-link">
+                                        <div style="<?php echo strpos(globalFunctionUri(2), 'point/index') !== false ? 'color:white; font-weight: bold' : '' ?>">Daftar Penukaran</div>
+                                    </a>
+                                </li>
+                            </ul>
                         </li> 
                         
                         <li class="sidenav-item <?php echo $globalModulActive == 'salesOrder' ? 'active' : '' ?>" id="grupMenuSalesOrder">
                             <a href="<?php echo $globalUrl ?>salesOrder/index" class="sidenav-link">
                                 <i class="sidenav-icon fa fa-tags"></i>&nbsp;
-                                <div style="<?php echo $globalModulActive == 'point' ? 'color:white; font-weight: bold' : '' ?>">Riwayat Penjualan</div>
+                                <div style="<?php echo $globalModulActive == 'salesOrder' ? 'color:white; font-weight: bold' : '' ?>">Riwayat Penjualan</div>
                             </a>
                         </li>                         
                     </ul>
