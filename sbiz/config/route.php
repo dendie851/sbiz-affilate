@@ -31,6 +31,31 @@
 			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
 			include_once 'app/home/index.php';
 		break;		
+	case (globalFunctionUri(2) == 'home/salesSummary'): 
+			language::set($config['app']['language']);
+			$globalModulActive = 'home';
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
+			include_once 'app/home/salesSummary.php';
+	break;		
+	case (globalFunctionUri(2) == 'home/commissionSummary'): 
+			language::set($config['app']['language']);
+			$globalModulActive = 'home';
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
+			include_once 'app/home/commissionSummary.php';
+	break;		
+	case (globalFunctionUri(2) == 'home/pointSummary'): 
+			language::set($config['app']['language']);
+			$globalModulActive = 'home';
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
+			include_once 'app/home/pointSummary.php';
+	break;		
+	case (globalFunctionUri(2) == 'home/productSummary'): 
+			language::set($config['app']['language']);
+			$globalModulActive = 'home';
+			$globalViewScroolGroupMenu = 'grupMenuDashboard';												
+			include_once 'app/home/productSummary.php';
+	break;		
+
   	case (globalFunctionUri(2) == 'changePassword/edit'):
 			language::set($config['app']['language']);
 			$globalModulActive = 'changePassword';	
