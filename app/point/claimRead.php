@@ -15,6 +15,7 @@
 			  where so.affiliate_id = '{$userId}'
 			    and so.is_affiliate = '1'
 			    and so.is_delete = '0'
+				and so.status_order != '4'
 			    and so.status_payment = '1'";
 
 	$tmp = $globalConDBMySQL->query($query) or die (mysqli_error($globalConDBMySQL));
